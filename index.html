@@ -1,31 +1,161 @@
 <!doctype html>
-<html lang="ru" data-stub>
+<html lang="ru">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Площадка продажи красивых автономеров · демо готовится</title>
-<meta name="robots" content="noindex">
-<meta http-equiv="refresh" content="120">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Номерок – купить и продать красивый госномер на авто любого региона</title>
+<meta name="description" content="Объявления о продаже красивых автомобильных номеров любого региона: поиск по символам, фильтр по цене и региону, зеркальные и одинаковые номера. Переоформление через ГИБДД. Демо-сайт.">
+<link rel="canonical" href="https://vladislav-jb.github.io/krasivye-nomera/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Номерок – красивые госномера любого региона">
+<meta property="og:description" content="Поиск номера по символам, региону и цене. Объявления частных продавцов.">
+<meta property="og:url" content="https://vladislav-jb.github.io/krasivye-nomera/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect x='1' y='7' width='30' height='18' rx='3' fill='%23fff' stroke='%2312161C' stroke-width='2'/%3E%3Crect x='24' y='9' width='5' height='14' fill='%231E4FD8'/%3E%3Ctext x='12' y='21' font-family='monospace' font-weight='700' font-size='11' text-anchor='middle'%3E777%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500&family=Manrope:wght@400;600&display=swap">
-<style>
-:root{--bg:#F6F3EE;--ink:#1F1E1C;--muted:#6B655C;--acc:#8A6737}
-@media (prefers-color-scheme:dark){:root{--bg:#161615;--ink:#EDE7DC;--muted:#A9A195;--acc:#C9A66B}}
-*{box-sizing:border-box}html,body{height:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif;display:grid;place-items:center;padding:24px}
-main{max-width:560px;text-align:center;display:flex;flex-direction:column;gap:18px;align-items:center}
-.k{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--acc);font-weight:600}
-h1{font:500 clamp(2rem,6vw,3rem)/1.1 "Cormorant Garamond",Georgia,serif;margin:0;text-wrap:balance}
-p{margin:0;color:var(--muted)}
-.bar{width:220px;height:3px;background:color-mix(in srgb,var(--acc) 20%,transparent);border-radius:3px;overflow:hidden}
-.bar i{display:block;height:100%;width:40%;background:var(--acc);animation:m 1.6s ease-in-out infinite}
-@keyframes m{0%{transform:translateX(-100%)}100%{transform:translateX(250%)}}
-@media (prefers-reduced-motion:reduce){.bar i{animation:none;width:60%}}
-</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Roboto+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="style.css?v=1">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Номерок","url":"https://vladislav-jb.github.io/krasivye-nomera/","potentialAction":{"@type":"SearchAction","target":"https://vladislav-jb.github.io/krasivye-nomera/?q={search_term_string}","query-input":"required name=search_term_string"}}</script>
 </head>
-<body><main>
-<div class="k">Демо-версия по вашему ТЗ</div>
-<h1>Площадка продажи красивых автономеров</h1>
-<div class="bar" aria-hidden="true"><i></i></div>
-<p>Сайт сейчас собирается по вашему техническому заданию.<br>Будет готов сегодня к <b>17:20</b> – по этой же ссылке.</p>
-<p style="font-size:.85rem">Страница обновится сама.</p>
-</main></body></html>
+<body>
+<header class="hdr">
+  <div class="wrap hdr__in">
+    <a class="logo" href="./"><span class="logo__mk"><span>А777АА</span><i></i></span>Номерок</a>
+    <nav class="nav" aria-label="Разделы">
+      <a href="#list">Объявления</a><a href="#generator">Генератор номеров</a><a href="#pereoformlenie">Переоформление</a><a href="#faq">Вопросы</a><a href="#" data-demo="Рейтинг продавцов – отдельная страница, в демо не делалась.">Рейтинг продавцов</a>
+    </nav>
+    <div class="hdr__r">
+      <a class="btn" href="#" data-demo="Личный кабинет: мои объявления, избранное, статистика просмотров. В демо не делался.">Войти</a>
+      <button class="btn btn--acc" data-add>+ Добавить номер</button>
+      <button class="burger" aria-label="Меню" aria-expanded="false">☰</button>
+    </div>
+  </div>
+</header>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <div class="hero__head">
+      <div>
+        <h1>Красивые госномера любого региона</h1>
+        <p class="muted">Введите нужные буквы и цифры прямо в номер – список обновится сразу. Звёздочкой или пустой клеткой отметьте любой символ.</p>
+      </div>
+      <div class="stats"><div><b id="st-total">0</b><span>объявлений</span></div><div><b id="st-reg">0</b><span>регионов</span></div><div><b>1 240</b><span>продавцов</span></div></div>
+    </div>
+    <form class="filter" id="filter" onsubmit="return false" aria-label="Поиск номера">
+      <div class="filter__row">
+        <div class="plate-in" aria-label="Маска номера">
+          <div class="plate-in__main">
+            <input maxlength="1" data-i="0" aria-label="Первая буква" placeholder="А">
+            <input maxlength="1" data-i="1" class="d" aria-label="Цифра 1" placeholder="0" inputmode="numeric">
+            <input maxlength="1" data-i="2" class="d" aria-label="Цифра 2" placeholder="0" inputmode="numeric">
+            <input maxlength="1" data-i="3" class="d" aria-label="Цифра 3" placeholder="0" inputmode="numeric">
+            <input maxlength="1" data-i="4" aria-label="Вторая буква" placeholder="А">
+            <input maxlength="1" data-i="5" aria-label="Третья буква" placeholder="А">
+          </div>
+          <div class="plate-in__reg"><input maxlength="3" id="f-reg" aria-label="Регион" placeholder="777" inputmode="numeric"><span class="rus">RUS <i></i></span></div>
+        </div>
+        <div class="fset">
+          <label>Цена от, ₽<input id="f-min" inputmode="numeric" placeholder="0"></label>
+          <label>Цена до, ₽<input id="f-max" inputmode="numeric" placeholder="без ограничений"></label>
+          <label>Регион<select id="f-area"><option value="">Все регионы</option><option value="msk">Москва</option><option value="mo">Московская обл.</option><option value="spb">Санкт-Петербург и ЛО</option><option value="oth">Другие регионы</option></select></label>
+          <button class="btn" type="button" id="f-reset">Сбросить</button>
+        </div>
+      </div>
+      <div class="chips" id="chips">
+        <button type="button" class="chip" data-c="same3">Три одинаковые цифры · 777</button>
+        <button type="button" class="chip" data-c="letters">Одинаковые буквы · А***АА</button>
+        <button type="button" class="chip" data-c="round">Круглые · 100, 200</button>
+        <button type="button" class="chip" data-c="first">Первая десятка · 001–009</button>
+        <button type="button" class="chip" data-c="mirror">Зеркальные · 1001-стиль</button>
+        <button type="button" class="chip" data-c="full">Полный «комплект» · А777АА</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<div class="wrap main">
+  <section class="panel" id="list" aria-label="Объявления">
+    <div class="list__head">
+      <h2 style="font-size:1.15rem">Объявления <span class="muted" id="found" style="font-weight:600"></span></h2>
+      <select id="sort" aria-label="Сортировка"><option value="new">Сначала новые</option><option value="cheap">Сначала дешёвые</option><option value="exp">Сначала дорогие</option></select>
+    </div>
+    <table>
+      <thead><tr><th>Размещён</th><th>Номер</th><th>Цена</th><th>Продавец</th><th class="act"></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="empty" id="empty" hidden>По такой маске ничего нет. Попробуйте убрать часть символов или <button class="btn btn--sm" data-add>оставьте заявку на номер</button></div>
+    <div class="more"><button class="btn" id="more">Показать ещё</button></div>
+  </section>
+
+  <aside class="aside">
+    <div class="panel top"><h3>Топ-10 <button class="btn btn--sm btn--gold" data-demo="Платное размещение в «Топ-10» на 7 дней – в демо не подключено.">Попасть сюда</button></h3><ol id="top"></ol></div>
+    <div class="panel promo"><h3>Продаёте номер?</h3><p>Разместите объявление бесплатно за 2 минуты. Покупатели найдут его по маске и напишут напрямую.</p><button class="btn btn--acc" data-add>+ Добавить номер</button></div>
+    <div class="panel gen" id="generator"><h3>Генератор номеров</h3><p>Впишите любимые цифры – покажем все красивые комбинации и какие из них сейчас продаются.</p>
+      <div class="gen__row"><input id="gen-in" maxlength="3" placeholder="777" inputmode="numeric" aria-label="Цифры для генератора"><button class="btn btn--acc btn--sm" id="gen-go">Подобрать</button></div>
+      <div class="gen__out" id="gen-out"></div></div>
+  </aside>
+</div>
+
+<section class="info" id="pereoformlenie">
+  <div class="wrap">
+    <h2>Как переоформить номер</h2>
+    <p class="muted" style="margin-top:8px;max-width:760px">Номер переходит к новому владельцу только вместе с автомобилем или через сохранение номера – по правилам ГИБДД. Мы не продаём госзнаки и не участвуем в сделках, а помогаем найти продавца.</p>
+    <div class="steps">
+      <div><h3>Найдите номер</h3><p>Задайте маску, регион и цену. Сохраните понравившиеся объявления.</p></div>
+      <div><h3>Свяжитесь с продавцом</h3><p>Договоритесь о цене и способе переоформления: через куплю-продажу авто или сохранение номера.</p></div>
+      <div><h3>Оформите в ГИБДД</h3><p>Регистрационные действия проходят в отделении или через Госуслуги, обычно за один визит.</p></div>
+      <div><h3>Получите номер</h3><p>После регистрации номер закреплён за вашим автомобилем. Объявление снимается с сайта.</p></div>
+    </div>
+    <p class="law">Передача регистрационного знака возможна только в порядке, предусмотренном законодательством РФ, в рамках регистрационных действий с транспортным средством. Сайт не осуществляет продажу государственных регистрационных знаков.</p>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap faq__grid">
+    <div>
+      <h2>Частые вопросы</h2>
+      <details><summary>Законно ли купить красивый номер?</summary><p>Продавать сам госзнак нельзя, но номер можно получить законно: вместе с автомобилем или через процедуру сохранения номера с последующим переоформлением на ваш автомобиль.</p></details>
+      <details><summary>Сколько стоит размещение объявления?</summary><p>Обычное объявление – бесплатно. Платно только выделение и место в «Топ-10».</p></details>
+      <details><summary>Как искать по части номера?</summary><p>Заполните только нужные клетки в номере, остальные оставьте пустыми – например, 777 в цифрах найдёт все номера с тремя семёрками.</p></details>
+      <details><summary>Как проверить продавца?</summary><p>Смотрите рейтинг и отзывы продавца, просите выписку из СТС и проверяйте номер через Госуслуги перед сделкой.</p></details>
+    </div>
+    <div class="seo">
+      <h2>Красивые номера по регионам</h2>
+      <p>Каждый регион и каждая маска – отдельная страница с понятным адресом: так сайт находят в Яндексе и Google по запросам «купить номер 777», «номера с одинаковыми буквами», «красивые номера Москва».</p>
+      <ul>
+        <li><a href="#list" data-reg="77">Номера 77 региона</a></li><li><a href="#list" data-reg="97">Номера 97 региона</a></li><li><a href="#list" data-reg="99">Номера 99 региона</a></li>
+        <li><a href="#list" data-reg="177">Номера 177 региона</a></li><li><a href="#list" data-reg="197">Номера 197 региона</a></li><li><a href="#list" data-reg="777">Номера 777 региона</a></li>
+        <li><a href="#list" data-reg="797">Номера 797 региона</a></li><li><a href="#list" data-reg="50">Номера 50 региона</a></li><li><a href="#list" data-reg="90">Номера 90 региона</a></li>
+        <li><a href="#list" data-reg="78">Номера 78 региона</a></li><li><a href="#list" data-reg="98">Номера 98 региона</a></li><li><a href="#list" data-reg="178">Номера 178 региона</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap">
+    <div class="ftr__in">
+      <div><b>Номерок</b>Доска объявлений о красивых автомобильных номерах. Демо-сайт: объявления, продавцы и цены сгенерированы для примера.</div>
+      <div><b>Сайт</b><a href="#list">Объявления</a><a href="#" data-demo>Архив</a><a href="#" data-demo>Личный кабинет</a></div>
+      <div><b>Медиа</b><a href="#" data-demo>Галерея номеров</a><a href="#" data-demo>Отзывы</a></div>
+      <div><b>Инфо</b><a href="#pereoformlenie">Переоформление</a><a href="#faq">Вопросы</a><a href="#" data-demo>Обратная связь</a></div>
+    </div>
+    <p class="ftr__legal">© 2026 Номерок. Сайт не осуществляет продажу государственных регистрационных знаков, не участвует в сделках между пользователями и не гарантирует возможность передачи номера.</p>
+  </div>
+</footer>
+
+<div class="modal" id="m-card" hidden role="dialog" aria-modal="true" aria-label="Объявление"><div class="modal__box"><button class="modal__x" aria-label="Закрыть">×</button><div id="card"></div></div></div>
+<div class="modal" id="m-add" hidden role="dialog" aria-modal="true" aria-labelledby="add-h"><div class="modal__box"><button class="modal__x" aria-label="Закрыть">×</button>
+  <h2 id="add-h">Добавить номер</h2>
+  <form class="form" id="add-form">
+    <label>Номер (например, А777АА)<input id="a-num" maxlength="6" required placeholder="А777АА" style="font:700 1.2rem var(--plate);text-transform:uppercase"></label>
+    <div class="two"><label>Регион<input id="a-reg" maxlength="3" required placeholder="77" inputmode="numeric"></label><label>Цена, ₽<input id="a-price" required placeholder="300000" inputmode="numeric"></label></div>
+    <div class="two"><label>Имя<input id="a-name" required></label><label>Телефон или Telegram<input id="a-tel" required></label></div>
+    <button class="btn btn--acc" type="submit">Опубликовать бесплатно</button>
+    <p class="muted" style="font-size:.8rem">В демо объявление появится только у вас в списке. На боевом сайте – после проверки модератором.</p>
+  </form>
+</div></div>
+<script src="app.js?v=1"></script>
+</body>
+</html>
