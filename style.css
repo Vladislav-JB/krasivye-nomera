@@ -197,6 +197,6 @@ td.date{color:var(--muted);font-size:.84rem;white-space:nowrap}
   .steps{grid-template-columns:1fr}
   .seo ul{columns:1}
   .form .two{grid-template-columns:1fr}
-  .logo{font-size:1rem}
+  .logo{font-size:1rem}.logo__mk{display:none}.hdr__in{gap:10px}.hdr__r{gap:8px}.hdr__r .btn--acc{padding:8px 10px;font-size:.82rem}
   .pl{font-size:.98rem;height:32px}
 }
