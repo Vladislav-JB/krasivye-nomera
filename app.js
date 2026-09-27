@@ -22,7 +22,7 @@
     return s;
   }
   function makeDigits() {
-    const r = rnd(), a = String(1 + Math.floor(rnd() * 9));
+    const r = rnd(), a = rnd() < .45 ? pick(['7', '7', '7', '1', '5', '9', '8']) : String(1 + Math.floor(rnd() * 9));
     if (r < .22) return a + a + a;
     if (r < .38) return '00' + a;
     if (r < .52) return a + '00';
@@ -137,14 +137,12 @@
     let d = $('#gen-in').value.replace(/\D/g, '');
     if (!d) { toast('Впишите от 1 до 3 цифр'); return; }
     d = d.padStart(3, '0').slice(-3);
-    const combos = [];
-    for (const c of L) combos.push(c + d + c + c);
-    const out = combos.slice(0, 12).map(n => {
-      const a = ads.find(x => x.num === n);
-      return a ? `<span data-id="${a.id}" title="Продаётся за ${rub(a.price)}" style="cursor:pointer">${plate(a)}</span>` : `<span class="free" title="Сейчас не продаётся">${plate({ num: n, reg: '77' })}</span>`;
-    });
-    const n = combos.filter(x => ads.some(a => a.num === x)).length;
-    $('#gen-out').innerHTML = `<p style="width:100%;margin:0 0 4px">В продаже: <b>${n}</b> из ${combos.length}. Яркие – продаются, нажмите.</p>` + out.join('');
+    const sale = ads.filter(a => a.num.slice(1, 4) === d).sort((a, b) => beauty(b.num) - beauty(a.num)).slice(0, 8);
+    const have = new Set(sale.map(a => a.num));
+    const ideas = [...L].map(c => c + d + c + c).filter(n => !have.has(n)).slice(0, Math.max(4, 10 - sale.length));
+    $('#gen-out').innerHTML = `<p style="width:100%;margin:0 0 4px">С цифрами ${d} в продаже: <b>${ads.filter(a => a.num.slice(1, 4) === d).length}</b>. Яркие – нажмите, бледные – идеи для заявки.</p>` +
+      sale.map(a => `<span data-id="${a.id}" title="Продаётся за ${rub(a.price)}" style="cursor:pointer">${plate(a)}</span>`).join('') +
+      ideas.map(n => `<span class="free" title="Сейчас не продаётся">${plate({ num: n, reg: '77' })}</span>`).join('');
   }
   $('#gen-go').addEventListener('click', gen);
   $('#gen-in').addEventListener('keydown', e => { if (e.key === 'Enter') gen(); });
