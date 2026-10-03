@@ -200,3 +200,10 @@ td.date{color:var(--muted);font-size:.84rem;white-space:nowrap}
   .logo{font-size:1rem}.logo__mk{display:none}.hdr__in{gap:10px}.hdr__r{gap:8px}.hdr__r .btn--acc{padding:8px 10px;font-size:.82rem}
   .pl{font-size:.98rem;height:32px}
 }
+
+  /* подпись разработчика: «Создан в «Веб-Ателье»» */
+  .ftr .foot__made { display: inline-block; white-space: nowrap; font-style: italic; font-size: .95rem; line-height: 1.4; color: #9AA4B2; padding: .4em 0; }
+  .ftr .foot__made a { display: inline; margin: 0 0 0 .3em; color: inherit; text-decoration: none; font-family: Calibri, "Carlito", sans-serif; font-weight: 700; font-style: italic; font-size: 1.12em; }
+  .ftr .foot__made a:hover { color: #fff; text-decoration: underline; text-underline-offset: .18em; }
+  .ftr .foot__made img { display: inline-block; width: 40px; height: 52px; max-width: none; margin-left: .35em; vertical-align: -7px; }
+  .ftr__made { margin: 14px 0 0; text-align: right; }
